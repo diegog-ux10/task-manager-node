@@ -9,43 +9,66 @@ const questions = [
         choices: [
             {
                 value: '1',
-                name: 'Create Task'
+                name: '1. Create Task'
             },
             {
                 value: '2',
-                name: 'List Tasks'
+                name: '2. List Tasks'
             },
             {
                 value: '3',
-                name: 'List Completed Task'
+                name: '3. List Completed tasks'
             },
             {
                 value: '4',
-                name: 'List Pending Task'
+                name: '4. List Pending Tasks'
             },
             {
                 value: '5',
-                name: 'Complete Task(s)'
+                name: '5. Complete Task(s)'
             },
             {
                 value: '6',
-                name: 'Delete Task'
+                name: '6. Delete Task'
             },
             {
                 value: '0',
-                name: 'Exit'
+                name: '0. Exit'
             },
         ]
     }
 ]
+
 
 export const inquirerMenu = async() => {
     console.clear();
     console.log('================='.green);
     console.log('  Select Option'.green);
     console.log('=================\n'.green);
+    
+    const {option} = await inquirer.prompt(questions);
+    
+    return option;
+}
 
-    const opt = await inquirer.prompt(questions);
+export const pause = async() => {
+    const questions = [{
+        type: 'input',
+        message: `\nPress ${'ENTER'.green} to continue\n`,
+        name: 'response'
+    
+    }]
+    await inquirer.prompt(questions);
+    return true
+}
 
-    return opt;
+export const readInput = async(message) => {
+    const questions = [{
+        type: 'input',
+        message: message,
+        name: 'desc'
+    
+    }]
+    const { desc } = await inquirer.prompt(questions);
+    return desc
 }
