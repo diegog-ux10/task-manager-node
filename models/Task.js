@@ -4,7 +4,7 @@ export class Task {
 
     id = '';
     desc = '';
-    completadoEn = null;
+    doneAt = null;
 
     constructor(desc) {
         this.id = uuidv4();
