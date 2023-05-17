@@ -6,6 +6,7 @@ import { readDB, saveDB } from './helpers/saveFile.js';
 const main = async () => {
   const tasks = new Tasks();
   const taskDB = readDB();
+  console.log(taskDB);
   
   if(taskDB) {
     tasks.createTasksListByArr(taskDB)
