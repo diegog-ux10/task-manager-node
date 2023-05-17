@@ -41,7 +41,7 @@ const questions = [
 
 
 export const inquirerMenu = async() => {
-    console.clear();
+    // console.clear();
     console.log('================='.green);
     console.log('  Select Option'.white);
     console.log('=================\n'.green);
